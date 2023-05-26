@@ -1,22 +1,17 @@
-
 #include<stdio.h>
-int main()
-{
-    int n,r,a,s=0;
-    scanf("%d",&n);
-    a=n;
-    while(a!=0)
-    {
-        r=a%10;
-        a=a/10;
-        s=s*10+r;
+int Ispalindrome(int n){
+    int sum = 0;
+    int temp = n;
+    while(temp != 0){
+        sum = sum * 10 + (temp % 10);
+        temp /= 10;
     }
-    if(s==n)
-    {
-        printf("True");
-    }
-    else
-    {
-        printf("False");
-    }
+    if (n == sum) return 1;
+    else return 0;
+}
+int main(){
+    int num;
+    scanf("%d",&num);
+    if(Ispalindrome(num) == 1) printf("True");
+    else printf("False");
 }
